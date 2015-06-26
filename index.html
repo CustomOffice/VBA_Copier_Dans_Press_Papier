@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Vba copier dans press papier : Copie un texte dans le presse papier">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Vba copier dans press papier</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/CustomOffice/VBA_Copier_Dans_Press_Papier">View on GitHub</a>
+
+          <h1 id="project_title">Vba copier dans press papier</h1>
+          <h2 id="project_tagline">Copie un texte dans le presse papier</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/CustomOffice/VBA_Copier_Dans_Press_Papier/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/CustomOffice/VBA_Copier_Dans_Press_Papier/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="vba_copier_dans_press_papier" class="anchor" href="#vba_copier_dans_press_papier" aria-hidden="true"><span class="octicon octicon-link"></span></a>VBA_Copier_Dans_Press_Papier</h1>
+
+<p>Copie un texte dans le presse papier            </p>
+
+<h2>
+<a id="instruction" class="anchor" href="#instruction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Instruction</h2>
+
+<ul>
+<li>Soit créer un module dans votre projet vba et y copier/coller le code ci-dessous</li>
+<li>Soit télécharger le module (fichier *.bas) et l'inserer dans votre projet vba</li>
+</ul>
+
+<h2>
+<a id="code" class="anchor" href="#code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code</h2>
+
+<div class="highlight highlight-bash"><pre><span class="pl-s"><span class="pl-pds">'</span>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+<span class="pl-s"><span class="pl-pds">'</span></span><span class="pl-k">!!!</span>TITRE <span class="pl-c1">:</span> Copier dans le presse papier                                                            <span class="pl-k">!!!</span>
+<span class="pl-s"><span class="pl-pds">'</span>!!!DATE :  17.04.15                                                                                !!!</span>
+<span class="pl-s"><span class="pl-pds">'</span></span><span class="pl-k">!!!</span>                                                                                                <span class="pl-k">!!!</span>
+<span class="pl-s"><span class="pl-pds">'</span>!!!DESCRIPTION : Copie un texte dans le presse papier                                              !!!</span>
+<span class="pl-s"><span class="pl-pds">'</span></span><span class="pl-k">!!!</span>                                                                                                <span class="pl-k">!!!</span>
+<span class="pl-s"><span class="pl-pds">'</span>!!!REGLES :                                                                                        !!!</span>
+<span class="pl-s"><span class="pl-pds">'</span></span><span class="pl-k">!!!</span>- format string pour le texte                                                                   <span class="pl-k">!!!</span>
+<span class="pl-s"><span class="pl-pds">'</span>!!!- Activer la reference Microsoft Forms X.0 Object Library                                       !!!</span>
+<span class="pl-s"><span class="pl-pds">'</span></span><span class="pl-k">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
+
+Sub copier_dans_press_papier(texte, Optional retour_info As Boolean = False)
+    <span class="pl-s"><span class="pl-pds">'</span>Déclaration des variables</span>
+<span class="pl-s">    Dim X As New DataObject</span>
+<span class="pl-s"></span>
+<span class="pl-s">    <span class="pl-pds">'</span></span>enregistrement dans le presse papier
+    X.SetText texte
+    X.PutInClipboard
+
+    <span class="pl-s"><span class="pl-pds">'</span>affiche le retour d<span class="pl-pds">'</span></span>info si demandé
+    If retour_info = True Then
+        MsgBox <span class="pl-s"><span class="pl-pds">"</span>Texte copié dans le presse papier<span class="pl-pds">"</span></span>, , <span class="pl-s"><span class="pl-pds">"</span>Confirmation<span class="pl-pds">"</span></span>
+    End If
+End Sub</pre></div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Vba copier dans press papier maintained by <a href="https://github.com/CustomOffice">CustomOffice</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
